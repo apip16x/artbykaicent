@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #F7F4D5;
+  --color-ink: #0A3323;
+  --color-sage: #839958;
+  --color-teal: #105666;
+  --color-rosy: #D3968C;
+
+  --color-brand-beige: #F7F4D5;
+  --color-brand-dark-green: #0A3323;
+  --color-brand-moss: #839958;
+  --color-brand-midnight: #105666;
+  --color-brand-rosy: #D3968C;
+  
+  --font-display: "Averia Libre", serif;
+  --font-body: "Nunito", sans-serif;
+}
+
+:root {
+  --bg: var(--color-canvas);
+  --ink: var(--color-ink);
+  --sage: var(--color-sage);
+  --teal: var(--color-teal);
+  --rosy: var(--color-rosy);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor.hovered {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+}

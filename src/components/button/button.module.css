@@ -1,0 +1,58 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.primary {
+  background-color: var(--rosy);
+  color: var(--bg);
+  border: 1px solid var(--rosy);
+}
+
+.primary:hover {
+  background-color: var(--teal);
+  border-color: var(--teal);
+  color: var(--bg);
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+.outline:hover {
+  background-color: var(--ink);
+  color: var(--bg);
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--ink);
+  border: 1px solid transparent;
+}
+
+.ghost:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.md {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
