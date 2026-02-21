@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Button } from '@/components/button/button';
 import styles from './services-preview.module.css';
 import { cn } from '@/lib/utils';
 
@@ -19,11 +20,11 @@ const services = [
     label: 'Custom Press-ons', 
     image: 'https://picsum.photos/seed/pressons/800/1000' 
   },
-  { 
-    id: 'housecalls', 
-    label: 'House Calls', 
-    image: 'https://picsum.photos/seed/housecalls/800/1000' 
-  },
+  // { 
+  //   id: 'housecalls', 
+  //   label: 'House Calls', 
+  //   image: 'https://picsum.photos/seed/housecalls/800/1000' 
+  // },
 ];
 
 export const ServicesPreview = () => {
@@ -69,6 +70,9 @@ export const ServicesPreview = () => {
               </li>
             ))}
           </ul>
+          <div className={styles.cta}>
+            <Button variant="secondary" label="Book via WhatsApp" href="/book" />
+          </div>
         </div>
       </div>
     </section>

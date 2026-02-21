@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
+import { Button } from '@/components/button/button';
 import styles from './gallery-card.module.css';
-import { cn } from '@/lib/utils';
 
 interface GalleryCardProps {
   id: string;
@@ -30,7 +30,15 @@ export const GalleryCard = ({ title, category, image, onClick }: GalleryCardProp
           referrerPolicy="no-referrer"
         />
         <div className={styles.overlay}>
-          <span className={styles.viewDetails}>View Details</span>
+          <Button
+            size="sm"
+            label="View Set"
+            className={styles.viewSet}
+            onClick={(e) => {
+              e.stopPropagation();
+              onClick?.();
+            }}
+          />
         </div>
       </div>
       <div className={styles.info}>

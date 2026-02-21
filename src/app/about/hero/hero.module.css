@@ -37,6 +37,11 @@
   opacity: 0.7;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.cta {
+  margin-top: 0.5rem;
 }
 
 .scrollIndicator {

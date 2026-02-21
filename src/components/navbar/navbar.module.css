@@ -4,16 +4,17 @@
   left: 0;
   right: 0;
   z-index: 50;
-  padding: 1.5rem 2rem;
-  mix-blend-mode: difference;
-  color: white; /* Inverted due to difference mode */
+  padding: 2rem 4rem;
+  background-color: var(--bg);
+  /* mix-blend-mode: difference;
+  color: white; Inverted due to difference mode */
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
+  /* max-width: 1400px; */
   margin: 0 auto;
 }
 
@@ -44,7 +45,7 @@
   font-weight: 700;
   text-transform: uppercase;
   font-size: 0.9rem;
-  border: 1px solid white;
+  border: 1px solid var(--ink);
   padding: 0.5rem 1.2rem;
   border-radius: 999px;
   transition: background 0.2s, color 0.2s;
@@ -52,5 +53,6 @@
 
 .cta:hover {
   background: white;
+  border: 1px solid white;
   color: black;
 }

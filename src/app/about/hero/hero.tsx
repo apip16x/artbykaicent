@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { Button } from '@/components/button/button';
 import styles from './hero.module.css';
 
 export const Hero = () => {
@@ -22,6 +23,7 @@ export const Hero = () => {
         <p className={styles.subline}>
           Based in Jakarta and Depok.
         </p>
+        <Button variant="primary" label="View Services" href="/services" className={styles.cta} />
       </motion.div>
       
       <div className={styles.scrollIndicator}>

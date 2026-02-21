@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/button/button';
 import styles from './navbar.module.css';
 
 export const Navbar = () => {
@@ -16,9 +17,9 @@ export const Navbar = () => {
         </Link>
         <div className={styles.links}>
           <Link to="/about" className={styles.link}>About</Link>
-          <Link to="/work" className={styles.link}>Work</Link>
           <Link to="/services" className={styles.link}>Services</Link>
-          <Link to="/book" className={styles.cta}>Book Now</Link>
+          <Link to="/work" className={styles.link}>Work</Link>
+          <Button variant="outline" label="Book Now" href="/book" />
         </div>
       </div>
     </motion.nav>
