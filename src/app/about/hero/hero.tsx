@@ -29,17 +29,17 @@ export const Hero = () => {
           <img src="/images/hero%202.jpeg" alt="" className={styles.bgImage} />
         </div>
         <div className={styles.bgCell}>
-          <img src="/images/hero%201.jpeg" alt="" className={styles.bgImage} />
+          <img src="/images/hero%209.png" alt="" className={styles.bgImage2} />
         </div>
       </div>
       <motion.div style={{ y, opacity }} className={styles.content}>
         <h1 className={styles.headline}>
-          artby<br/>kaicent
+          your private nail tech<br/>& tooth gem artist
         </h1>
-        {/* <p className={styles.subline}>
+        <p className={styles.subline}>
           Based in Jakarta and Depok.
         </p>
-        <Button variant="primary" label="View Services" href="/services" className={styles.cta} /> */}
+        {/* <Button variant="primary" label="View Services" href="/services" className={styles.cta} /> */}
       </motion.div>
       
       <div className={styles.scrollIndicator}>

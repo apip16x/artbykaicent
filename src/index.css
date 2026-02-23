@@ -2,9 +2,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-canvas: #F7F4D5;
+  --color-canvas: #f4f4f4;
   --color-ink: #0A3323;
-  --color-sage: #839958;
+  --color-sage: #12070C;
   --color-teal: #105666;
   --color-rosy: #D3968C;
 

@@ -30,7 +30,7 @@ export const Intro = () => {
           className={styles.imageWrapper}
         >
           <img 
-            src="https://picsum.photos/seed/studio/800/1000" 
+            src="/images/hero%201.jpeg" 
             alt="Studio Vibe" 
             className={styles.image}
             referrerPolicy="no-referrer"
