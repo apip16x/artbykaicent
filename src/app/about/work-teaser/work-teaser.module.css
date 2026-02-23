@@ -70,3 +70,47 @@
   font-size: 1.25rem;
   font-style: italic;
 }
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .heading {
+    padding: 0 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .track {
+    gap: 2.5rem;
+    padding-left: 2rem;
+  }
+  .imageWrapper {
+    width: 240px;
+    height: 320px;
+  }
+  .caption {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .section {
+    height: 220vh;
+  }
+  .heading {
+    padding: 0 1.25rem;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.08em;
+  }
+  .track {
+    gap: 1.5rem;
+    padding-left: 1.25rem;
+  }
+  .imageWrapper {
+    width: 180px;
+    height: 240px;
+  }
+  .caption {
+    font-size: 0.95rem;
+  }
+}

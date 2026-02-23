@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import styles from './button.module.css';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline';
+export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'underline';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 export interface ButtonProps {

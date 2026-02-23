@@ -1,26 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import "tailwindcss";
-
-@theme {
-  --color-canvas: #F7F4D5;
-  --color-ink: #0A3323;
-  --color-sage: #839958;
-  --color-teal: #105666;
-  --color-rosy: #D3968C;
-
-  --color-brand-beige: #F7F4D5;
-  --color-brand-dark-green: #0A3323;
-  --color-brand-moss: #839958;
-  --color-brand-midnight: #105666;
-  --color-brand-rosy: #D3968C;
-  
-  --font-display: "Averia Libre", serif;
-  --font-body: "Nunito", sans-serif;
-}
+/* artbykaicent — Global design tokens and base styles (luxury palette) */
 
 :root {
-  --bg: var(--color-canvas);
-  --ink: var(--color-ink);
+  /* Layout & typography */
+  --bg: var(--color-white);
+  --ink: var(--color-deep-blue);
+  --border-editorial: 1px solid var(--color-deep-blue);
+  /* Buttons */
+  --btn-primary-bg: var(--color-maroon);
+  --btn-primary-text: var(--color-white);
+  --btn-secondary-bg: var(--color-light-blue);
+  --btn-outline-border: 1px solid var(--color-deep-blue);
+  /* Section accent & variety */
+  --section-accent: var(--color-pink);
+  --footer-bg: var(--color-black);
   --sage: var(--color-sage);
   --teal: var(--color-teal);
   --rosy: var(--color-rosy);
@@ -35,8 +27,10 @@ body {
   /* overflow-x: hidden; */
 }
 
+/* Headings (Averia Libre) and body (Nunito) default to Deep Blue via --ink */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
+  color: var(--ink);
 }
 
 /* Custom Cursor */
@@ -58,5 +52,5 @@ h1, h2, h3, h4, h5, h6 {
 .custom-cursor.hovered {
   width: 40px;
   height: 40px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(46, 24, 141, 0.15);
 }

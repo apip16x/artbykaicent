@@ -1,10 +1,19 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-import { Button } from '@/components/button/button';
+import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import { useRef, useEffect } from 'react';
+import { useHeroNav } from '@/contexts/hero-nav-context';
 import styles from './hero.module.css';
 
 export const Hero = () => {
   const ref = useRef(null);
+  /* Hero state until section fully leaves viewport (next section starts) */
+  const isInView = useInView(ref, { amount: 0 });
+  const { setHeroInView } = useHeroNav();
+
+  useEffect(() => {
+    setHeroInView(isInView);
+    return () => setHeroInView(false);
+  }, [isInView, setHeroInView]);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"]
@@ -15,15 +24,22 @@ export const Hero = () => {
 
   return (
     <section ref={ref} className={styles.hero}>
+      <div className={styles.bgGrid} aria-hidden>
+        <div className={styles.bgCell}>
+          <img src="/images/hero%202.jpeg" alt="" className={styles.bgImage} />
+        </div>
+        <div className={styles.bgCell}>
+          <img src="/images/hero%201.jpeg" alt="" className={styles.bgImage} />
+        </div>
+      </div>
       <motion.div style={{ y, opacity }} className={styles.content}>
         <h1 className={styles.headline}>
-          Your private nail tech <br />
-          <span className={styles.italic}>&</span> tooth gem specialist
+          artby<br/>kaicent
         </h1>
-        <p className={styles.subline}>
+        {/* <p className={styles.subline}>
           Based in Jakarta and Depok.
         </p>
-        <Button variant="primary" label="View Services" href="/services" className={styles.cta} />
+        <Button variant="primary" label="View Services" href="/services" className={styles.cta} /> */}
       </motion.div>
       
       <div className={styles.scrollIndicator}>

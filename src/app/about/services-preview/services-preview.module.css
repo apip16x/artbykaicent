@@ -48,6 +48,43 @@
   }
 }
 
+@media (max-width: 1023px) and (min-width: 768px) {
+  .listColumn {
+    padding: 5rem 2.5rem;
+  }
+  .heading {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .listItem {
+    font-size: 2rem;
+    padding: 1.25rem 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    min-height: auto;
+  }
+  .imageColumn {
+    min-height: 40vh;
+  }
+  .listColumn {
+    padding: 3rem 1.5rem;
+  }
+  .heading {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .listItem {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+  }
+  .cta {
+    margin-top: 1.5rem;
+  }
+}
+
 .teal {
   background-color: var(--teal);
   color: white;

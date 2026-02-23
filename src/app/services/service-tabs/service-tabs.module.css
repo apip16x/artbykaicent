@@ -64,3 +64,26 @@
 
 /* Alternate indicator style (underline) if preferred, but prompt asked for bg change or high contrast border */
 /* The current implementation uses a full background wash with opacity */
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .tab {
+    min-width: 100px;
+    padding: 1.25rem 0.75rem;
+  }
+  .label {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .tab {
+    min-width: 80px;
+    padding: 1rem 0.5rem;
+  }
+  .label {
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+  }
+}

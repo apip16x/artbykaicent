@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HeroNavProvider } from './contexts/hero-nav-context';
 import { Hero } from './app/about/hero/hero';
 import { Intro } from './app/about/intro/intro';
 import { ServicesPreview } from './app/about/services-preview/services-preview';
@@ -81,15 +82,17 @@ const AboutPage = () => {
 export default function App() {
   return (
     <Router>
-      <CustomCursor />
-      <Navbar />
-      <Routes>
+      <HeroNavProvider>
+        <CustomCursor />
+        <Navbar />
+        <Routes>
         <Route path="/" element={<AboutPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/work" element={<WorkPage />} />
         {/* Add other routes as needed */}
-      </Routes>
+        </Routes>
+      </HeroNavProvider>
     </Router>
   );
 }
