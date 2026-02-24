@@ -3,7 +3,7 @@ import { GalleryGrid } from './gallery-grid/gallery-grid';
 
 export const WorkPage = () => {
   return (
-    <main className="pt-16 md:pt-20 min-h-screen bg-brand-beige text-brand-dark-green">
+    <main className="pt-16 md:pt-20 min-h-screen bg-bg text-brand-dark-green">
       <section className="py-12 px-4 md:py-16 md:px-6 lg:py-20 lg:px-8 border-b border-ink flex flex-col items-center text-center">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}

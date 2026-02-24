@@ -21,7 +21,7 @@ export const Intro = () => {
         </motion.div>
       </div>
       
-      <div className={cn(styles.column, styles.imageColumn)}>
+      {/* <div className={cn(styles.column, styles.imageColumn)}>
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -36,7 +36,7 @@ export const Intro = () => {
             referrerPolicy="no-referrer"
           />
         </motion.div>
-      </div>
+      </div> */}
     </section>
   );
 };

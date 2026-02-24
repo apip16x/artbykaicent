@@ -7,10 +7,12 @@ import { Intro } from './app/about/intro/intro';
 import { ServicesPreview } from './app/about/services-preview/services-preview';
 import { WorkTeaser } from './app/about/work-teaser/work-teaser';
 import { Navbar } from './components/navbar/navbar';
+import { Footer } from './components/footer/footer';
 import { Button } from './components/button/button';
 
 import { ServicesPage } from './app/services/services-page';
 import { WorkPage } from './app/work/page';
+import { RulesPage } from './app/rules/page';
 
 // Custom Cursor Component
 const CustomCursor = () => {
@@ -65,16 +67,6 @@ const AboutPage = () => {
         </p>
         <Button size="lg" variant="primary">Book Appointment</Button>
       </section>
-      <footer className="py-12 px-8 flex justify-between items-end bg-brand-midnight text-brand-beige">
-        <div>
-          <p className="font-display text-2xl">artbykaicent</p>
-          <p className="text-sm opacity-50 mt-2">© 2024</p>
-        </div>
-        <div className="flex gap-4">
-          <a href="#" className="hover:underline">Instagram</a>
-          <a href="#" className="hover:underline">TikTok</a>
-        </div>
-      </footer>
     </main>
   );
 };
@@ -90,8 +82,10 @@ export default function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/work" element={<WorkPage />} />
+        <Route path="/rules" element={<RulesPage />} />
         {/* Add other routes as needed */}
         </Routes>
+        <Footer />
       </HeroNavProvider>
     </Router>
   );

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { ServiceTabs } from './service-tabs/service-tabs';
 import { TabContent } from './tab-content/tab-content';
-import { Policy } from './policy/policy';
 import { motion } from 'framer-motion';
 
 export const ServicesPage = () => {
@@ -29,7 +28,6 @@ export const ServicesPage = () => {
 
       <ServiceTabs activeTab={activeTab} setActiveTab={setActiveTab} />
       <TabContent activeTab={activeTab} />
-      <Policy />
     </main>
   );
 };

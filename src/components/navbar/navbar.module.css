@@ -9,12 +9,14 @@
   background-color: var(--bg);
   color: var(--ink);
   transition: background-color 0.3s ease, color 0.3s ease;
+  border-bottom: 1px solid var(--ink);
 }
 
 /* Hero state: no bg, colors use canvas (light on dark hero) */
 .navbar.hero {
   background-color: transparent;
   color: var(--bg);
+  border-bottom: none;
 }
 
 .navbar.hero .link,

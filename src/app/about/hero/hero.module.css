@@ -106,6 +106,7 @@
 
 .arrow {
   font-size: 2rem;
+  color: var(--bg);
 }
 
 /* Tablet */

@@ -71,7 +71,7 @@ export const ServicesPreview = () => {
             ))}
           </ul>
           <div className={styles.cta}>
-            <Button variant="secondary" label="Book via WhatsApp" href="/book" />
+            <Button variant="primary" label="Our Services" href="/services" />
           </div>
         </div>
       </div>
