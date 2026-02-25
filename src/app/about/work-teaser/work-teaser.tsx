@@ -27,7 +27,7 @@ export const WorkTeaser = () => {
                 <div className={styles.imageWrapper}>
                   <img
                     src={work.image}
-                    alt={work.title}
+                    alt={work.alt ?? work.title}
                     className={styles.image}
                     referrerPolicy="no-referrer"
                   />
@@ -40,7 +40,7 @@ export const WorkTeaser = () => {
                 <div className={styles.imageWrapper}>
                   <img
                     src={work.image}
-                    alt={work.title}
+                    alt={work.alt ?? work.title}
                     className={styles.image}
                     referrerPolicy="no-referrer"
                   />

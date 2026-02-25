@@ -13,6 +13,7 @@ import { InitialLoader, shouldShowLoader } from './components/loader/InitialLoad
 import { PageTransitionVeil } from './components/page-transition/PageTransitionVeil';
 import { TransitionContent } from './components/page-transition/TransitionContent';
 
+import { DocumentHead } from './components/seo/DocumentHead';
 import { ServicesPage } from './app/services/services-page';
 import { WorkPage } from './app/work/page';
 import { RulesPage } from './app/rules/page';
@@ -95,6 +96,7 @@ export default function App() {
         )}
       </AnimatePresence>
       <PageTransitionProvider>
+        <DocumentHead />
         <PageBodyClass />
         <HeroNavProvider>
           <CustomCursor />

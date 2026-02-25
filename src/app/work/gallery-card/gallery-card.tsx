@@ -7,10 +7,19 @@ interface GalleryCardProps {
   title: string;
   category: string;
   image: string;
+  alt?: string;
   onClick?: () => void;
 }
 
-export const GalleryCard = ({ title, category, image, onClick }: GalleryCardProps) => {
+function getImageAlt(item: { title: string; category: string; alt?: string }): string {
+  if (item.alt) return item.alt;
+  return item.category === 'Nails'
+    ? `${item.title} – Custom nail art Jakarta`
+    : `${item.title} – Amsterdam-style tooth gem application`;
+}
+
+export const GalleryCard = ({ title, category, image, alt, onClick }: GalleryCardProps) => {
+  const imgAlt = alt ?? getImageAlt({ title, category, alt });
   return (
     <motion.div 
       layout
@@ -25,7 +34,7 @@ export const GalleryCard = ({ title, category, image, onClick }: GalleryCardProp
       <div className={styles.imageContainer}>
         <img 
           src={image} 
-          alt={title} 
+          alt={imgAlt} 
           className={styles.image}
           referrerPolicy="no-referrer"
         />
