@@ -26,10 +26,10 @@ export const Hero = () => {
     <section ref={ref} className={styles.hero}>
       <div className={styles.bgGrid} aria-hidden>
         <div className={styles.bgCell}>
-          <img src="/images/hero%202.jpeg" alt="" className={styles.bgImage} />
+          <img src="/images/hero%206.jpeg" alt="" className={styles.bgImage} />
         </div>
         <div className={styles.bgCell}>
-          <img src="/images/hero%209.png" alt="" className={styles.bgImage2} />
+          <img src="/images/hero%2010.jpeg" alt="" className={styles.bgImage2} />
         </div>
       </div>
       <motion.div style={{ y, opacity }} className={styles.content}>
