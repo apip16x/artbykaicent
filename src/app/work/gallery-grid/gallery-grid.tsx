@@ -1,37 +1,25 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { WORK_FILTERS, WORK_ITEMS } from '@/data/work-data';
+import type { WorkItem } from '@/data/work-data';
 import { GalleryCard } from '../gallery-card/gallery-card';
 import { GalleryModal } from '../gallery-modal/gallery-modal';
-import styles from './gallery-grid.module.css';
 import { cn } from '@/lib/utils';
-
-// Mock Data
-const workItems = [
-  { id: '1', title: 'Chrome Hearts', category: 'Nails', image: 'https://picsum.photos/seed/nails1/600/800' },
-  { id: '2', title: 'Emerald City', category: 'Gems', image: 'https://picsum.photos/seed/gems1/600/800' },
-  { id: '3', title: 'Tortoise Shell', category: 'Nails', image: 'https://picsum.photos/seed/nails2/600/800' },
-  { id: '4', title: 'Butterfly Effect', category: 'Gems', image: 'https://picsum.photos/seed/gems2/600/800' },
-  { id: '5', title: 'Aura Blush', category: 'Nails', image: 'https://picsum.photos/seed/nails3/600/800' },
-  { id: '6', title: 'Gold Grillz', category: 'Gems', image: 'https://picsum.photos/seed/gems3/600/800' },
-  { id: '7', title: 'Cyber Y2K', category: 'Nails', image: 'https://picsum.photos/seed/nails4/600/800' },
-  { id: '8', title: 'Swarovski Dust', category: 'Gems', image: 'https://picsum.photos/seed/gems4/600/800' },
-  { id: '9', title: 'French Micro', category: 'Nails', image: 'https://picsum.photos/seed/nails5/600/800' },
-];
-
-const filters = ['All', 'Nails', 'Gems'];
+import styles from './gallery-grid.module.css';
 
 export const GalleryGrid = () => {
-  const [activeFilter, setActiveFilter] = useState('All');
-  const [selectedItem, setSelectedItem] = useState<(typeof workItems)[0] | null>(null);
+  const [activeFilter, setActiveFilter] = useState(WORK_FILTERS[0]);
+  const [selectedItem, setSelectedItem] = useState<WorkItem | null>(null);
 
-  const filteredItems = activeFilter === 'All' 
-    ? workItems 
-    : workItems.filter(item => item.category === activeFilter);
+  const filteredItems =
+    activeFilter === 'All'
+      ? WORK_ITEMS
+      : WORK_ITEMS.filter((item) => item.category === activeFilter);
 
   return (
     <section className={styles.container}>
       <div className={styles.filterBar}>
-        {filters.map(filter => (
+        {WORK_FILTERS.map((filter) => (
           <button
             key={filter}
             onClick={() => setActiveFilter(filter)}

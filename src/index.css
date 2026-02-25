@@ -1,38 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import "tailwindcss";
 
-@theme {
-  --color-canvas: #F4F4F4;
-  --color-ink: #0A3323;
-  --color-sage: #D3968C;
-  --color-teal: #6F3037;
-  --color-rosy: #D3968C;
+/* Heritage Luxury palette: 100 = default, 80 = 20% tint (lighter), 120 = 20% shade (darker) */
+:root {
+  --dark-80: #373737;
+  --dark-100: #050505;
+  --dark-120: #040404;
 
-  --color-brand-beige: #F7F4D5;
-  --color-brand-dark-green: #0A3323;
-  --color-brand-moss: #839958;
-  --color-brand-midnight: #105666;
-  --color-brand-rosy: #D3968C;
-  
+  --eclipse-80: #5A4A45;
+  --eclipse-100: #301D17;
+  --eclipse-120: #261712;
+
+  --blossom-80: #72383D;
+  --blossom-100: #4F060C;
+  --blossom-120: #3F0508;
+
+  --red-80: #833F39;
+  --red-100: #640F07;
+  --red-120: #500C06;
+
+  --pearl-80: #E7E5DB;
+  --pearl-100: #E1DFD2;
+  --pearl-120: #B4B2A8;
+
+  --grey-80: #D9D8CD;
+  --grey-100: #D0CEC1;
+  --grey-120: #A6A59A;
+
+  --font-display: "Averia Libre", serif;
+  --font-body: "Nunito", sans-serif;
+
+  /* Motion: luxury bezier, no bounce */
+  --ease-luxury: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-luxury-in: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-luxury-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --duration-page: 0.8s;
+  --duration-loader-line: 1.2s;
+  --duration-loader-reveal: 0.9s;
+  --duration-loader-exit: 1s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-page: 0.01s;
+    --duration-loader-line: 0.01s;
+    --duration-loader-reveal: 0.01s;
+    --duration-loader-exit: 0.01s;
+  }
+}
+
+@theme {
+  --color-dark-80: var(--dark-80);
+  --color-dark-100: var(--dark-100);
+  --color-dark-120: var(--dark-120);
+  --color-eclipse-80: var(--eclipse-80);
+  --color-eclipse-100: var(--eclipse-100);
+  --color-eclipse-120: var(--eclipse-120);
+  --color-blossom-80: var(--blossom-80);
+  --color-blossom-100: var(--blossom-100);
+  --color-blossom-120: var(--blossom-120);
+  --color-red-80: var(--red-80);
+  --color-red-100: var(--red-100);
+  --color-red-120: var(--red-120);
+  --color-pearl-80: var(--pearl-80);
+  --color-pearl-100: var(--pearl-100);
+  --color-pearl-120: var(--pearl-120);
+  --color-grey-80: var(--grey-80);
+  --color-grey-100: var(--grey-100);
+  --color-grey-120: var(--grey-120);
   --font-display: "Averia Libre", serif;
   --font-body: "Nunito", sans-serif;
 }
 
-:root {
-  --bg: var(--color-canvas);
-  --ink: var(--color-ink);
-  --sage: var(--color-sage);
-  --teal: var(--color-teal);
-  --rosy: var(--color-rosy);
-}
-
+/* Default: nocturnal luxury (home) */
 body {
-  background-color: var(--bg);
-  color: var(--ink);
+  background-color: var(--dark-100);
+  color: var(--pearl-100);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* overflow-x: hidden; */
+}
+
+/* Gallery-style pages: clean pearl backdrop */
+body.page-pearl {
+  background-color: var(--pearl-100);
+  color: var(--dark-100);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -46,7 +98,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 20px;
   height: 20px;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--grey-120);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
@@ -58,5 +110,5 @@ h1, h2, h3, h4, h5, h6 {
 .custom-cursor.hovered {
   width: 40px;
   height: 40px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(225, 223, 210, 0.2);
 }

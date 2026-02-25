@@ -36,8 +36,8 @@ const PolicySection = () => (
 
 export const RulesPage = () => {
   return (
-    <main className="pt-16 md:pt-20 min-h-screen bg-bg">
-      <section className="py-12 px-4 md:py-16 md:px-6 lg:py-20 lg:px-8 border-b border-ink flex flex-col items-center text-center">
+    <main className="pt-16 md:pt-20 min-h-screen bg-pearl-100 text-dark-100">
+      <section className="py-12 px-4 md:py-16 md:px-6 lg:py-20 lg:px-8 border-b border-grey-120 flex flex-col items-center text-center">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ export const RulesPage = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-base md:text-lg max-w-2xl opacity-70 px-2"
+          className="text-base md:text-lg max-w-2xl opacity-70 px-2 font-body"
         >
           House calls and booking policy.
         </motion.p>

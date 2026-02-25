@@ -1,12 +1,11 @@
 .hero {
-  /* Adjust hero images: scale (e.g. 1, 1.5), position (center, top, 50% 30%), brightness (0–1) */
   --hero-img-1-scale: 1.5;
   --hero-img-1-pos-x: left;
   --hero-img-1-pos-y: center;
   --hero-img-1-brightness: 0.75;
   --hero-img-2-scale: 1;
   --hero-img-2-pos-x: center;
-  --hero-img-2-pos-y: top;
+  --hero-img-2-pos-y: center;
   --hero-img-2-brightness: 0.75;
 
   height: 100vh;
@@ -16,10 +15,8 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  /* overflow: hidden; */
-  border-bottom: 1px solid var(--ink);
-  background-color: #101010;
-  /* padding: 2rem; */
+  background-color: var(--grey-100);
+  border-bottom: 1px solid var(--grey-120);
 }
 
 .bgGrid {
@@ -28,18 +25,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   z-index: 0;
-  gap: 12px;
-  padding: 88px 12px 12px;
+  padding: 80px 12px 12px;
 }
 
 .bgCell {
   position: relative;
   overflow: hidden;
 }
-  
 
-
-/* Adjustable hero image 1 – tune via variables on .hero */
 .bgImage {
   width: 100%;
   height: 100%;
@@ -72,12 +65,14 @@
 }
 
 .headline {
-  font-size: clamp(96px, 20vw, 120px);
+  font-size: clamp(80px, 20vw, 96px);
   line-height: 0.8;
   font-weight: 400;
   margin-bottom: 2rem;
   letter-spacing: -0.03em;
-  color: var(--bg);
+  color: var(--pearl-100);
+
+  max-width: 1000px;
 }
 
 .italic {
@@ -92,8 +87,8 @@
   opacity: 0.7;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 1.5rem;
-  color: var(--bg);
+  /* margin-bottom: 1.5rem; */
+  color: var(--pearl-100);
 }
 
 .cta {
@@ -109,13 +104,12 @@
 
 .arrow {
   font-size: 2rem;
-  color: var(--bg);
+  color: var(--dark-100);
 }
 
 /* Tablet */
 @media (max-width: 1023px) {
-
-  .bgGrid{
+  .bgGrid {
     padding: 0;
   }
   .headline {
@@ -143,7 +137,6 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
-  
   .headline {
     font-size: clamp(72px, 22vw, 140px);
     margin-bottom: 1rem;

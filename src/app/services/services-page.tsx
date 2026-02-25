@@ -1,14 +1,15 @@
 import { useState } from 'react';
+import { SERVICE_TABS } from '@/data/services-data';
 import { ServiceTabs } from './service-tabs/service-tabs';
 import { TabContent } from './tab-content/tab-content';
 import { motion } from 'framer-motion';
 
 export const ServicesPage = () => {
-  const [activeTab, setActiveTab] = useState('nails');
+  const [activeTab, setActiveTab] = useState(SERVICE_TABS[0].id);
 
   return (
     <main className="pt-16 md:pt-20">
-      <section className="py-12 px-4 md:py-16 md:px-6 lg:py-20 lg:px-8 border-b border-ink flex flex-col items-center text-center">
+      <section className="py-12 px-4 md:py-16 md:px-6 lg:py-20 lg:px-8 border-b border-grey-120 flex flex-col items-center text-center text-dark-100">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

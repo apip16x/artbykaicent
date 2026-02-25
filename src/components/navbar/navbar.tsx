@@ -1,31 +1,29 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Button } from '@/components/button/button';
-import { useHeroNav } from '@/contexts/hero-nav-context';
-import { cn } from '@/lib/utils';
+import { TransitionNavLink } from '@/components/page-transition/TransitionNavLink';
+import { TransitionLink } from '@/components/page-transition/TransitionLink';
 import styles from './navbar.module.css';
 
 export const Navbar = () => {
-  const { isHeroInView } = useHeroNav();
-
   return (
     <motion.nav
-      className={cn(styles.navbar, isHeroInView && styles.hero)}
+      className={`${styles.navbar} ${styles.pagePearl}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className={styles.container}>
         <div className={styles.left}>
-          <Link to="/" className={styles.link}>Home</Link>
-          <Link to="/services" className={styles.link}>Services</Link>
-          <Link to="/work" className={styles.link}>Work</Link>
+          <TransitionNavLink to="/" className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`} end>Home</TransitionNavLink>
+          <TransitionNavLink to="/services" className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}>Services</TransitionNavLink>
+          <TransitionNavLink to="/work" className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}>Work</TransitionNavLink>
         </div>
-        <Link to="/" className={styles.logo}>
+        <TransitionLink to="/" className={styles.logo}>
           artbykaicent
-        </Link>
+        </TransitionLink>
         <div className={styles.right}>
-          <Link to="/rules" className={styles.link}>Rules</Link>
+          <NavLink to="/rules" className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}>Rules</NavLink>
           <Button variant="underline" label="Inquiries" href="/book" className={styles.cta} />
         </div>
       </div>

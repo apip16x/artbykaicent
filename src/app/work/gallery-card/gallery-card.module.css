@@ -1,8 +1,8 @@
 .card {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--ink);
-  background-color: var(--bg);
+  border: 1px solid var(--grey-120);
+  background-color: var(--pearl-100);
   overflow: hidden;
   height: 100%;
 }
@@ -10,9 +10,9 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  aspect-ratio: 4/5; /* Editorial portrait ratio */
+  aspect-ratio: 4/5;
   overflow: hidden;
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px solid var(--grey-120);
 }
 
 .image {
@@ -29,7 +29,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(211, 150, 140, 0.8); /* Rosy Brown with opacity */
+  background-color: rgba(79, 6, 12, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,6 +62,7 @@
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   line-height: 1.2;
+  color: var(--dark-100);
 }
 
 .category {
@@ -70,6 +71,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   opacity: 0.7;
+  color: var(--dark-100);
 }
 
 /* Tablet */

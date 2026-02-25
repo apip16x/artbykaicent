@@ -1,14 +1,17 @@
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { HeroNavProvider } from './contexts/hero-nav-context';
+import { PageTransitionProvider } from './contexts/page-transition-context';
 import { Hero } from './app/about/hero/hero';
 import { Intro } from './app/about/intro/intro';
 import { ServicesPreview } from './app/about/services-preview/services-preview';
 import { WorkTeaser } from './app/about/work-teaser/work-teaser';
 import { Navbar } from './components/navbar/navbar';
 import { Footer } from './components/footer/footer';
-import { Button } from './components/button/button';
+import { InitialLoader, shouldShowLoader } from './components/loader/InitialLoader';
+import { PageTransitionVeil } from './components/page-transition/PageTransitionVeil';
+import { TransitionContent } from './components/page-transition/TransitionContent';
 
 import { ServicesPage } from './app/services/services-page';
 import { WorkPage } from './app/work/page';
@@ -54,39 +57,87 @@ const CustomCursor = () => {
 
 const AboutPage = () => {
   return (
-    <main>
+    <main className="min-h-screen bg-pearl-100 text-dark-100">
       <Hero />
       <Intro />
       <ServicesPreview />
       <WorkTeaser />
-      <section className="py-32 px-8 flex flex-col items-center text-center border-b border-ink">
-        <h2 className="font-display text-5xl mb-8 italic">Ready to get iced?</h2>
-        <p className="max-w-xl text-lg mb-12">
-          Private studio sessions available in Jakarta and Depok. 
-          House calls available upon request for a small travel fee.
-        </p>
-        <Button size="lg" variant="primary">Book Appointment</Button>
-      </section>
     </main>
   );
 };
 
+function PageBodyClass() {
+  const location = useLocation();
+  useEffect(() => {
+    const lightThemePaths = ['/', '/about', '/services', '/work', '/rules'];
+    const useLightTheme = lightThemePaths.includes(location.pathname);
+    document.body.classList.toggle('page-pearl', useLightTheme);
+    return () => document.body.classList.remove('page-pearl');
+  }, [location.pathname]);
+  return null;
+}
+
 export default function App() {
+  const [showLoader, setShowLoader] = useState(() => shouldShowLoader());
+
   return (
     <Router>
-      <HeroNavProvider>
-        <CustomCursor />
-        <Navbar />
-        <Routes>
-        <Route path="/" element={<AboutPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/work" element={<WorkPage />} />
-        <Route path="/rules" element={<RulesPage />} />
-        {/* Add other routes as needed */}
-        </Routes>
-        <Footer />
-      </HeroNavProvider>
+      <AnimatePresence mode="wait">
+        {showLoader && (
+          <motion.div
+            key="initial-loader"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <InitialLoader onComplete={() => setShowLoader(false)} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <PageTransitionProvider>
+        <PageBodyClass />
+        <HeroNavProvider>
+          <CustomCursor />
+          <PageTransitionVeil />
+          <Navbar />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <TransitionContent>
+                  <AboutPage />
+                </TransitionContent>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <TransitionContent>
+                  <AboutPage />
+                </TransitionContent>
+              }
+            />
+            <Route
+              path="/services"
+              element={
+                <TransitionContent>
+                  <ServicesPage />
+                </TransitionContent>
+              }
+            />
+            <Route
+              path="/work"
+              element={
+                <TransitionContent>
+                  <WorkPage />
+                </TransitionContent>
+              }
+            />
+            <Route path="/rules" element={<RulesPage />} />
+          </Routes>
+          <Footer />
+        </HeroNavProvider>
+      </PageTransitionProvider>
     </Router>
   );
 }

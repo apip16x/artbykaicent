@@ -1,5 +1,4 @@
-/* Design system: Nature Palette – pill button */
-
+/* Heritage Luxury – pill button */
 .button {
   display: inline-flex;
   align-items: center;
@@ -11,14 +10,14 @@
   letter-spacing: 1px;
   text-transform: none;
   cursor: pointer;
-  border: 1px solid #0A3323;
+  border: 1px solid var(--grey-120);
   text-decoration: none;
   white-space: nowrap;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .button:focus-visible {
-  outline: 2px solid #0A3323;
+  outline: 2px solid var(--eclipse-100);
   outline-offset: 2px;
 }
 
@@ -26,43 +25,53 @@
   display: inline-block;
 }
 
-/* Variants */
+/* Primary: blossom bg, pearl text */
 .primary {
-  background-color: #D3968C;
-  color: #F7F4D5;
-  border-color: #0A3323;
+  background-color: var(--blossom-100);
+  color: var(--pearl-100);
+  border-color: var(--grey-120);
 }
 
 .primary:hover {
-  background-color: #105666;
-  color: #F7F4D5;
-  border-color: #0A3323;
+  background-color: var(--blossom-120);
+  color: var(--pearl-100);
+  border-color: var(--grey-120);
 }
 
+/* Secondary: eclipse bg, pearl-80 text */
 .secondary {
-  background-color: #0A3323;
-  color: #F7F4D5;
-  border-color: #0A3323;
+  background-color: var(--eclipse-100);
+  color: var(--pearl-80);
+  border-color: var(--grey-120);
 }
 
 .secondary:hover {
-  background-color: #105666;
-  color: #F7F4D5;
-  border-color: #0A3323;
+  background-color: var(--eclipse-120);
+  color: var(--pearl-80);
+  border-color: var(--grey-120);
 }
 
 .outline {
   background-color: transparent;
-  color: #0A3323;
-  border: 1px solid #0A3323;
+  color: var(--dark-100);
+  border: 1px solid var(--eclipse-100);
+}
+
+body:not(.page-pearl) .outline {
+  color: var(--pearl-100);
+  border-color: var(--grey-120);
 }
 
 .outline:hover {
-  background-color: rgba(10, 51, 35, 0.15);
-  color: #0A3323;
-  border-color: #0A3323;
+  background-color: rgba(48, 29, 23, 0.15);
+  border-color: var(--eclipse-100);
 }
 
+body:not(.page-pearl) .outline:hover {
+  background-color: rgba(225, 223, 210, 0.1);
+}
+
+/* Underline: like navbar Inquiries link – transparent, underlined, uppercase */
 .underline {
   background-color: transparent;
   color: inherit;
@@ -70,12 +79,71 @@
   border-radius: 0;
   text-decoration: underline;
   text-underline-offset: 0.25em;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0;
 }
 
 .underline:hover {
   background-color: transparent;
   color: inherit;
   opacity: 0.8;
+}
+
+/* Underline variant: optional color (text + underline) */
+.underlineColorRed {
+  color: var(--red-100);
+  text-decoration-color: var(--red-100);
+}
+
+.underlineColorRed:hover {
+  color: var(--red-100);
+}
+
+.underlineColorBlossom {
+  color: var(--blossom-100);
+  text-decoration-color: var(--blossom-100);
+}
+
+.underlineColorBlossom:hover {
+  color: var(--blossom-100);
+}
+
+.underlineColorDark {
+  color: var(--dark-100);
+  text-decoration-color: var(--dark-100);
+}
+
+.underlineColorDark:hover {
+  color: var(--dark-100);
+}
+
+.underlineColorEclipse {
+  color: var(--eclipse-100);
+  text-decoration-color: var(--eclipse-100);
+}
+
+.underlineColorEclipse:hover {
+  color: var(--eclipse-100);
+}
+
+.underlineColorPearl {
+  color: var(--pearl-100);
+  text-decoration-color: var(--pearl-100);
+}
+
+.underlineColorPearl:hover {
+  color: var(--pearl-100);
+}
+
+.underlineColorGrey {
+  color: var(--grey-120);
+  text-decoration-color: var(--grey-120);
+}
+
+.underlineColorGrey:hover {
+  color: var(--grey-120);
 }
 
 /* Sizes */
@@ -120,4 +188,11 @@
     padding: 0.6rem 1.5rem;
     font-size: 0.95rem;
   }
+}
+
+/* Underline variant: keep link-like padding regardless of size */
+.underline.sm,
+.underline.md,
+.underline.lg {
+  padding: 0.25rem 0;
 }

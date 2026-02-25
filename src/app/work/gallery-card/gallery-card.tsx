@@ -31,6 +31,7 @@ export const GalleryCard = ({ title, category, image, onClick }: GalleryCardProp
         />
         <div className={styles.overlay}>
           <Button
+            variant="underline"
             size="sm"
             label="View Set"
             className={styles.viewSet}

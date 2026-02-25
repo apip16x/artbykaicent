@@ -4,16 +4,36 @@ export default {
   theme: {
     extend: {
       colors: {
-        white: '#F4F4F4',
-        pink: '#D7BABC',
-        'deep-blue': '#2E188D',
-        maroon: '#6D3B2B',
-        'light-blue': '#8997B7',
-        black: '#202020',
-        canvas: '#F4F4F4',
-        ink: '#2E188D',
-        'brand-beige': '#F4F4F4',
-        'brand-midnight': '#202020',
+        dark: {
+          80: 'var(--dark-80)',
+          100: 'var(--dark-100)',
+          120: 'var(--dark-120)',
+        },
+        eclipse: {
+          80: 'var(--eclipse-80)',
+          100: 'var(--eclipse-100)',
+          120: 'var(--eclipse-120)',
+        },
+        blossom: {
+          80: 'var(--blossom-80)',
+          100: 'var(--blossom-100)',
+          120: 'var(--blossom-120)',
+        },
+        red: {
+          80: 'var(--red-80)',
+          100: 'var(--red-100)',
+          120: 'var(--red-120)',
+        },
+        pearl: {
+          80: 'var(--pearl-80)',
+          100: 'var(--pearl-100)',
+          120: 'var(--pearl-120)',
+        },
+        grey: {
+          80: 'var(--grey-80)',
+          100: 'var(--grey-100)',
+          120: 'var(--grey-120)',
+        },
       },
       fontFamily: {
         display: ['Averia Libre', 'serif'],

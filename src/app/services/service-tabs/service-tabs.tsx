@@ -1,24 +1,18 @@
 import { motion } from 'framer-motion';
-import styles from './service-tabs.module.css';
+import { SERVICE_TABS } from '@/data/services-data';
 import { cn } from '@/lib/utils';
+import styles from './service-tabs.module.css';
 
 interface ServiceTabsProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
 }
 
-const tabs = [
-  { id: 'nails', label: 'Nails' },
-  { id: 'gems', label: 'Tooth Gems' },
-  { id: 'press-ons', label: 'Press-ons' },
-  { id: 'aftercare', label: 'Aftercare & Hygiene' },
-];
-
 export const ServiceTabs = ({ activeTab, setActiveTab }: ServiceTabsProps) => {
   return (
     <section className={styles.container}>
       <div className={styles.tabsWrapper}>
-        {tabs.map((tab) => (
+        {SERVICE_TABS.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
