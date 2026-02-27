@@ -33,7 +33,7 @@ export const Intro = () => {
         <div className={styles.contentColumn}>
           <p className={styles.usp}>
             What sets us apart? We are Depok's very first Tooth Gem specialist,
-            using techniques adopted directly from Amsterdam experts—ensuring
+            using techniques adopted directly from global experts—ensuring
             the safest and most stylish application in town.
           </p>
           <p className={styles.philosophy}>

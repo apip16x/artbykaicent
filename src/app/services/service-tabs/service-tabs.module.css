@@ -2,7 +2,8 @@
   width: 100%;
   border-bottom: 1px solid var(--grey-120);
   background-color: var(--pearl-100);
-  position: relative;
+  position: sticky;
+  top: var(--navbar-height, 4rem);
   z-index: 40;
 }
 

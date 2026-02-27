@@ -8,15 +8,17 @@ type TransitionNavLinkProps = {
   className?: string | ((props: { isActive: boolean }) => string);
   children: React.ReactNode;
   end?: boolean;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 };
 
-export function TransitionNavLink({ to, className, children, end }: TransitionNavLinkProps) {
+export function TransitionNavLink({ to, className, children, end, onClick }: TransitionNavLinkProps) {
   const { triggerTransition } = usePageTransition();
   const location = useLocation();
   const path = to === '/about' ? '/' : to;
   const useTransition = TRANSITION_PATHS.includes(path);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    onClick?.(e);
     if (!useTransition) return;
     const target = (e.currentTarget.getAttribute('href') ?? path) as string;
     if (target === location.pathname || (target === '/' && location.pathname === '/about')) return;

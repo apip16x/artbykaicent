@@ -30,6 +30,9 @@
   --font-display: "Averia Libre", serif;
   --font-body: "Nunito", sans-serif;
 
+  /* Layout: offset for fixed navbar (sticky content stops here) */
+  --navbar-height: 4rem;
+
   /* Motion: luxury bezier, no bounce */
   --ease-luxury: cubic-bezier(0.76, 0, 0.24, 1);
   --ease-luxury-in: cubic-bezier(0.76, 0, 0.24, 1);

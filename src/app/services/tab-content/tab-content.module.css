@@ -161,6 +161,12 @@
   .grid {
     min-height: auto;
   }
+  .grid .imageColumn {
+    order: -1;
+  }
+  .grid .infoColumn {
+    order: 0;
+  }
   .infoColumn {
     padding: 3rem 1.5rem;
   }
