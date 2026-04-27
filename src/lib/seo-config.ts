@@ -20,7 +20,7 @@ export const DEFAULT_KEYWORDS = [
 ].join(', ');
 
 /** OG/Twitter: luxury dark theme (#050505 = --dark-100) */
-export const OG_IMAGE_URL = `${SITE_URL}/images/og-preview.png`;
+export const OG_IMAGE_URL = `${SITE_URL}/favicon.svg`;
 export const OG_COLOR = '#050505';
 export const TWITTER_HANDLE = '@artbykaicent';
 

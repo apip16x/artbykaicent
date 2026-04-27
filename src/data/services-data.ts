@@ -21,9 +21,9 @@ export const SERVICE_TABS: ServiceTab[] = [
 
 /** Preview list for About page (same ids as SERVICE_TABS, with images) */
 export const SERVICES_PREVIEW: ServicePreviewItem[] = [
-  { id: 'nails', label: 'Nail Art', image: '/images/hero 2.jpeg' },
-  { id: 'gems', label: 'Tooth Gems', image: '/images/hero 1.jpeg' },
-  { id: 'press-ons', label: 'Custom Press-ons', image: '/images/hero 5.jpeg' },
+  { id: 'nails', label: 'Nail Art', image: '/images/hero 2.webp' },
+  { id: 'gems', label: 'Tooth Gems', image: '/images/hero 1.webp' },
+  { id: 'press-ons', label: 'Custom Press-ons', image: '/images/hero 5.webp' },
 ];
 
 /** Full content per service for Services page tab content */
@@ -53,7 +53,7 @@ export const SERVICES_CONTENT: Record<string, ServiceContent> = {
         detail: 'Chrome (5k+), Rhinestones (2k+), 3D Gel (10k+), Luxury (20k+).',
       },
     ],
-    image: '/images/hero 2.jpeg',
+    image: '/images/hero 2.webp',
   },
   gems: {
     title: 'Tooth Gems',
@@ -66,7 +66,7 @@ export const SERVICES_CONTENT: Record<string, ServiceContent> = {
       { name: 'Disco Ball', price: 'IDR 600K', detail: 'Full coverage of one tooth.' },
       { name: 'Gold Charms', price: 'Ask for quote', detail: '18k/22k gold charms (pre-order only).' },
     ],
-    image: '/images/hero 1.jpeg',
+    image: '/images/hero 1.webp',
   },
   'press-ons': {
     title: 'Custom Press-ons',
@@ -78,7 +78,7 @@ export const SERVICES_CONTENT: Record<string, ServiceContent> = {
       { name: 'Custom Design Set', price: 'IDR 300K', detail: 'Based on your reference or freestyle.' },
       { name: 'Rush Order', price: 'IDR +100K', detail: '3-day turnaround.' },
     ],
-    image: '/images/hero 5.jpeg',
+    image: '/images/hero 5.webp',
   },
   aftercare: {
     title: 'Aftercare & Hygiene',
@@ -96,6 +96,6 @@ export const SERVICES_CONTENT: Record<string, ServiceContent> = {
       },
       { name: 'Maintenance', price: 'Info', detail: 'Refills recommended every 3-4 weeks.' },
     ],
-    image: '/images/hero 4.jpeg',
+    image: '/images/hero 4.webp',
   },
 };
