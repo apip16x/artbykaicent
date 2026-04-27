@@ -17,6 +17,7 @@ import { DocumentHead } from './components/seo/DocumentHead';
 import { ServicesPage } from './app/services/services-page';
 import { WorkPage } from './app/work/page';
 import { RulesPage } from './app/rules/page';
+import { LinksPage } from './app/links/page';
 
 // Custom Cursor Component
 const CustomCursor = () => {
@@ -70,12 +71,67 @@ const AboutPage = () => {
 function PageBodyClass() {
   const location = useLocation();
   useEffect(() => {
-    const lightThemePaths = ['/', '/about', '/services', '/work', '/rules'];
+    const lightThemePaths = ['/', '/about', '/services', '/work', '/rules', '/links'];
     const useLightTheme = lightThemePaths.includes(location.pathname);
     document.body.classList.toggle('page-pearl', useLightTheme);
     return () => document.body.classList.remove('page-pearl');
   }, [location.pathname]);
   return null;
+}
+
+function AppLayout() {
+  const location = useLocation();
+  const isLinksPage = location.pathname === '/links';
+
+  return (
+    <>
+      {!isLinksPage && <Navbar />}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <TransitionContent>
+              <AboutPage />
+            </TransitionContent>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <TransitionContent>
+              <AboutPage />
+            </TransitionContent>
+          }
+        />
+        <Route
+          path="/services"
+          element={
+            <TransitionContent>
+              <ServicesPage />
+            </TransitionContent>
+          }
+        />
+        <Route
+          path="/work"
+          element={
+            <TransitionContent>
+              <WorkPage />
+            </TransitionContent>
+          }
+        />
+        <Route
+          path="/links"
+          element={
+            <TransitionContent>
+              <LinksPage />
+            </TransitionContent>
+          }
+        />
+        <Route path="/rules" element={<RulesPage />} />
+      </Routes>
+      {!isLinksPage && <Footer />}
+    </>
+  );
 }
 
 export default function App() {
@@ -101,43 +157,7 @@ export default function App() {
         <HeroNavProvider>
           <CustomCursor />
           <PageTransitionVeil />
-          <Navbar />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <TransitionContent>
-                  <AboutPage />
-                </TransitionContent>
-              }
-            />
-            <Route
-              path="/about"
-              element={
-                <TransitionContent>
-                  <AboutPage />
-                </TransitionContent>
-              }
-            />
-            <Route
-              path="/services"
-              element={
-                <TransitionContent>
-                  <ServicesPage />
-                </TransitionContent>
-              }
-            />
-            <Route
-              path="/work"
-              element={
-                <TransitionContent>
-                  <WorkPage />
-                </TransitionContent>
-              }
-            />
-            <Route path="/rules" element={<RulesPage />} />
-          </Routes>
-          <Footer />
+          <AppLayout />
         </HeroNavProvider>
       </PageTransitionProvider>
     </Router>

@@ -39,6 +39,7 @@ export const Navbar = () => {
             <TransitionNavLink to="/" className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`} end>Home</TransitionNavLink>
             <TransitionNavLink to="/services" className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}>Services</TransitionNavLink>
             <TransitionNavLink to="/work" className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}>Work</TransitionNavLink>
+            <TransitionNavLink to="/links" className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}>Links</TransitionNavLink>
           </div>
         </div>
         <TransitionLink to="/" className={styles.logo} onClick={closeMenu}>
@@ -62,6 +63,7 @@ export const Navbar = () => {
             <TransitionNavLink to="/" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.active : ''}`} end>Home</TransitionNavLink>
             <TransitionNavLink to="/services" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.active : ''}`}>Services</TransitionNavLink>
             <TransitionNavLink to="/work" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.active : ''}`}>Work</TransitionNavLink>
+            <TransitionNavLink to="/links" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.active : ''}`}>Links</TransitionNavLink>
             <NavLink to="/rules" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.active : ''}`}>Rules</NavLink>
           </motion.div>
         )}
