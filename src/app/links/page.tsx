@@ -7,7 +7,7 @@ const LINKS = [
     id: 'wa',
     title: 'WhatsApp',
     subtitle: 'Fastest way to book or ask questions',
-    href: 'https://wa.me/wa.me/6285178275267',
+    href: 'https://wa.me/6285178275267',
     icon: MessageCircle,
     cta: 'Open WhatsApp',
   },
