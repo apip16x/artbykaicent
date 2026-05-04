@@ -18,6 +18,7 @@ import { ServicesPage } from './app/services/services-page';
 import { WorkPage } from './app/work/page';
 import { RulesPage } from './app/rules/page';
 import { LinksPage } from './app/links/page';
+import { AftercareGemsPage } from './app/aftercare/gems/page';
 
 // Custom Cursor Component
 const CustomCursor = () => {
@@ -72,7 +73,7 @@ function PageBodyClass() {
   const location = useLocation();
   useEffect(() => {
     const lightThemePaths = ['/', '/about', '/services', '/work', '/rules', '/links'];
-    const useLightTheme = lightThemePaths.includes(location.pathname);
+    const useLightTheme = lightThemePaths.includes(location.pathname) || location.pathname.startsWith('/aftercare');
     document.body.classList.toggle('page-pearl', useLightTheme);
     return () => document.body.classList.remove('page-pearl');
   }, [location.pathname]);
@@ -124,6 +125,14 @@ function AppLayout() {
           element={
             <TransitionContent>
               <LinksPage />
+            </TransitionContent>
+          }
+        />
+        <Route
+          path="/aftercare/gems"
+          element={
+            <TransitionContent>
+              <AftercareGemsPage />
             </TransitionContent>
           }
         />

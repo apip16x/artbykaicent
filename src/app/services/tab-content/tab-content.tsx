@@ -1,13 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { SERVICES_CONTENT } from '@/data/services-data';
 import styles from './tab-content.module.css';
-
-const WHATSAPP_NUMBER = '6281234567890';
-
-function getWhatsAppUrl(serviceName: string) {
-  const text = `Hello, I would like to order ${serviceName}.`;
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-}
 
 interface TabContentProps {
   activeTab: string;
@@ -37,20 +31,14 @@ export const TabContent = ({ activeTab }: TabContentProps) => {
                 <li key={index} className={styles.listItem}>
                   <div className={styles.itemHeader}>
                     <span className={styles.itemName}>{item.name}</span>
-                    <span className={styles.itemPrice}>{item.price}</span>
+                    <span className={styles.itemPrice}>{item.detail}</span>
                   </div>
-                  <p className={styles.itemDetail}>{item.detail}</p>
                 </li>
               ))}
             </ul>
-            <a
-              href={getWhatsAppUrl(data.title)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.bookLink}
-            >
+            <Link to="/links" className={styles.bookLink}>
               Book now
-            </a>
+            </Link>
           </div>
 
           <div className={styles.imageColumn}>

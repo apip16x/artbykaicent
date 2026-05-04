@@ -8,12 +8,14 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  min-height: 80vh;
+  /* Tall enough for the longest menu (Nails) so switching tabs does not resize the block */
+  min-height: max(78vh, 52rem);
 }
 
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: 1fr 1fr;
+    min-height: max(80vh, 52rem);
   }
 }
 
@@ -21,6 +23,7 @@
   padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
+  min-height: 100%;
   color: var(--dark-100);
 }
 
@@ -159,7 +162,7 @@
 /* Mobile */
 @media (max-width: 767px) {
   .grid {
-    min-height: auto;
+    min-height: max(72vh, 44rem);
   }
   .grid .imageColumn {
     order: -1;

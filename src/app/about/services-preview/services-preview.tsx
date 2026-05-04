@@ -1,15 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/button/button';
 import { SERVICES_PREVIEW } from '@/data/services-data';
 import styles from './services-preview.module.css';
-
-const WHATSAPP_NUMBER = '6281234567890'; // Replace with real business number (no + or spaces)
-
-function getWhatsAppUrl(serviceName: string) {
-  const text = `Hello, I would like to order ${serviceName}.`;
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-}
 
 export const ServicesPreview = () => {
   const [activeService, setActiveService] = useState(SERVICES_PREVIEW[0]);
@@ -49,15 +43,13 @@ export const ServicesPreview = () => {
                 onMouseEnter={() => setActiveService(service)}
               >
                 <span className={styles.serviceLabel}>{service.label}</span>
-                <a
-                  href={getWhatsAppUrl(service.label)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/links"
                   className={styles.bookLink}
                   onClick={(e) => e.stopPropagation()}
                 >
                   Book now
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

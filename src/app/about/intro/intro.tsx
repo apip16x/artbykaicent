@@ -2,13 +2,6 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/button/button';
 import styles from './intro.module.css';
 
-const WHATSAPP_NUMBER = '6281234567890';
-
-function getWhatsAppUrl() {
-  const text = 'Hello, I would like to book a session.';
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-}
-
 const INSTAGRAM_HANDLE = 'artbykaicent';
 const INSTAGRAM_URL = `https://instagram.com/${INSTAGRAM_HANDLE}`;
 
@@ -47,7 +40,7 @@ export const Intro = () => {
               variant="underline"
               label="Book Now"
               color="red-100"
-              href={getWhatsAppUrl()}
+              href="/links"
               className={styles.ctaButton}
             />
             <Button

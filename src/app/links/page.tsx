@@ -1,4 +1,4 @@
-import { ArrowUpRight, Instagram, MessageCircle } from 'lucide-react';
+import { ArrowUpRight, Instagram, MapPin, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './links.module.css';
 
@@ -18,6 +18,14 @@ const LINKS = [
     href: 'https://instagram.com/artbykaicent',
     icon: Instagram,
     cta: 'Open Instagram',
+  },
+  {
+    id: 'google',
+    title: 'Location & Review',
+    subtitle: 'Find our studio and leave a Google review',
+    href: 'https://www.google.com/maps/search/artbykaicent',
+    icon: MapPin,
+    cta: 'Open Google',
   },
 ] as const;
 

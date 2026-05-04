@@ -9,7 +9,9 @@ export const Footer = () => {
           Private studio sessions available in Jakarta and Depok.
           House calls available upon request for a small travel fee.
         </p>
-        <Button size="lg" variant="underline">Book Appointment</Button>
+        <Button size="lg" variant="underline" href="/links">
+          Book Appointment
+        </Button>
       </section>
       <div className="py-12 px-16 flex justify-between items-end bg-red-100 text-pearl-80 border-t border-grey-120">
         <div>
