@@ -20,7 +20,7 @@ const LINKS = [
   {
     id: 'book-lestari-event',
     title: 'Book Your Appointment for Event at Lestari',
-    subtitle: 'Reserve your slot through Google Calendar',
+    subtitle: 'Available From 8-10 May 2026!',
     href: 'https://calendar.app.google/1iQnX6erY7Z6dPeHA',
     icon: CalendarDays,
     cta: 'Open Booking',
