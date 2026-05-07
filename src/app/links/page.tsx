@@ -1,4 +1,10 @@
-import { ArrowUpRight, Instagram, MapPin, MessageCircle } from 'lucide-react';
+import {
+  ArrowUpRight,
+  CalendarDays,
+  Instagram,
+  MapPin,
+  MessageCircle,
+} from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './links.module.css';
 
@@ -10,6 +16,14 @@ const LINKS = [
     href: 'https://wa.me/6285178275267',
     icon: MessageCircle,
     cta: 'Open WhatsApp',
+  },
+  {
+    id: 'book-lestari-event',
+    title: 'Book Your Appointment for Event at Lestari',
+    subtitle: 'Reserve your slot through Google Calendar',
+    href: 'https://calendar.app.google/1iQnX6erY7Z6dPeHA',
+    icon: CalendarDays,
+    cta: 'Open Booking',
   },
   {
     id: 'ig',
