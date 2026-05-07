@@ -15,7 +15,8 @@ const LINKS = [
     id: 'ig',
     title: 'Instagram',
     subtitle: 'Portfolio drops, updates, and stories',
-    href: 'https://instagram.com/artbykaicent',
+    href:
+      'https://www.instagram.com/artbykaicentbali?igsh=NmFibHk2N2FndHU1&utm_source=qr',
     icon: Instagram,
     cta: 'Open Instagram',
   },

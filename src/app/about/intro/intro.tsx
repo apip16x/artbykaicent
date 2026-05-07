@@ -2,8 +2,9 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/button/button';
 import styles from './intro.module.css';
 
-const INSTAGRAM_HANDLE = 'artbykaicent';
-const INSTAGRAM_URL = `https://instagram.com/${INSTAGRAM_HANDLE}`;
+const INSTAGRAM_HANDLE = 'artbykaicentbali';
+const INSTAGRAM_URL =
+  'https://www.instagram.com/artbykaicentbali?igsh=NmFibHk2N2FndHU1&utm_source=qr';
 
 const EASE_LUXURY = [0.76, 0, 0.24, 1] as const;
 
