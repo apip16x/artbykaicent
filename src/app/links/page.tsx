@@ -1,48 +1,7 @@
-import {
-  ArrowUpRight,
-  CalendarDays,
-  Instagram,
-  MapPin,
-  MessageCircle,
-} from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { LINKS } from './links-data';
 import styles from './links.module.css';
-
-const LINKS = [
-  {
-    id: 'wa',
-    title: 'WhatsApp',
-    subtitle: 'Fastest way to book or ask questions',
-    href: 'https://wa.me/6285178275267',
-    icon: MessageCircle,
-    cta: 'Open WhatsApp',
-  },
-  {
-    id: 'book-lestari-event',
-    title: 'Book Your Appointment for Event at Lestari',
-    subtitle: 'Available From 8-10 May 2026!',
-    href: 'https://calendar.app.google/1iQnX6erY7Z6dPeHA',
-    icon: CalendarDays,
-    cta: 'Open Booking',
-  },
-  {
-    id: 'ig',
-    title: 'Instagram',
-    subtitle: 'Portfolio drops, updates, and stories',
-    href:
-      'https://www.instagram.com/artbykaicentbali?igsh=NmFibHk2N2FndHU1&utm_source=qr',
-    icon: Instagram,
-    cta: 'Open Instagram',
-  },
-  {
-    id: 'google',
-    title: 'Location & Review',
-    subtitle: 'Find our studio and leave a Google review',
-    href: 'https://www.google.com/maps/search/artbykaicent',
-    icon: MapPin,
-    cta: 'Open Google',
-  },
-] as const;
 
 export const LinksPage = () => {
   return (
